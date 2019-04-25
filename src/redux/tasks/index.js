@@ -49,6 +49,13 @@ export const addTask = (taskTitle) => (dispatch) => {
   )
 }
 
+export const restoreSampleTasks = () => (dispatch) => dispatch(
+  {
+    type:    FETCH_TASKS,
+    payload: fetchTaskListThunk(true),
+  }
+)
+
 export const switchTaskStep = (task, stepId) => (dispatch) => {
   dispatch(
     {

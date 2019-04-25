@@ -3,10 +3,10 @@ import TasksService from 'data-access/tasks-service'
 /**
  * Perform async Fetch the List of Tasks
  */
-export const fetchTaskListThunk = () => {
+export const fetchTaskListThunk = (restoreSamples) => {
   const tasksService = new TasksService()
   return new Promise((resolve, reject) => tasksService
-    .getList()
+    .getList(restoreSamples)
     .then((response) => {
       if (response.ok) {
         resolve(response.data)

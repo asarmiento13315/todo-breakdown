@@ -1,7 +1,9 @@
 
 export default class InMemTasksService {
-  getList = () => {
-    const state = this.loadStateFromStorage()
+  getList = (restoreSamples) => {
+    const state = !restoreSamples
+      ? this.loadStateFromStorage()
+      : { tasks: null, nextTaskId: 1 }
     if (!state.tasks) {
       state.tasks = sampleTaskList
         .map((taskData) => ({ id: this.getTaskId(state), ...taskData }))

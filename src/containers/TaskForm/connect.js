@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux'
 
 import {
   addTask,
+  restoreSampleTasks,
 } from 'redux/tasks'
 
 import Component from './TaskForm'
@@ -18,6 +19,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => (
   bindActionCreators({
     addTask,
+    restoreSampleTasks,
   }, dispatch)
 )
 

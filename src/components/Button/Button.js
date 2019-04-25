@@ -29,7 +29,7 @@ Button.propTypes = {
   imgSrc:    PropTypes.string,
   fullWidth: PropTypes.bool,
   marked:    PropTypes.bool,
-  children:  PropTypes.func,
+  children:  PropTypes.node,
 }
 
 Button.defaultProps = {
