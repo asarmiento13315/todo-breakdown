@@ -6,8 +6,12 @@ export default {
     flex-direction:column;
     align-items: center;
 
-    & > div {
-      margin-bottom: 1.5em;
+    & .top-section {
+      position: sticky;
+      top: 0px;
+      background: white;
+      width: 100%;
+      padding-bottom: 1em;
     }
   `,
 }

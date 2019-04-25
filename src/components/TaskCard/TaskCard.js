@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 import LabeledInput from 'components/LabeledInput'
 import useInputForm from 'components/custom-hooks/input-form.hook'
-import Card from 'components/Card'
 import TaskHeader from 'components/TaskHeader'
 import StepList from 'components/StepList'
 
@@ -25,18 +24,21 @@ function TaskCard({
     }
   }
 
+  const totalSteps = task.steps.length
+  const completedSteps = task.steps.filter((step) => step.done).length
+  const progress = `${completedSteps}/${totalSteps}`
+  const completed = totalSteps === completedSteps
+
   return (
-    <Card>
-      <Styled.Container>
-        <TaskHeader task={task} onClick={switchExpanded} onRemove={removeTask} />
-        <Styled.TaskContent expanded={expanded}>
-          <StepList task={task} switchTaskStep={switchTaskStep} removeTaskStep={removeTaskStep} />
-          <Styled.Form expanded={expanded} onSubmit={handleNewTaskStep}>
-            <LabeledInput placeholder={'New Step...'} {...newStep} />
-          </Styled.Form>
-        </Styled.TaskContent>
-      </Styled.Container>
-    </Card>
+    <Styled.Container completed={completed}>
+      <TaskHeader task={task} progress={progress} onClick={switchExpanded} onRemove={removeTask} />
+      <Styled.TaskContent expanded={expanded}>
+        <StepList task={task} switchTaskStep={switchTaskStep} removeTaskStep={removeTaskStep} />
+        <Styled.Form expanded={expanded} onSubmit={handleNewTaskStep}>
+          <LabeledInput placeholder={'New Step...'} {...newStep} />
+        </Styled.Form>
+      </Styled.TaskContent>
+    </Styled.Container>
   )
 }
 

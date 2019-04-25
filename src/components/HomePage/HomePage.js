@@ -9,8 +9,10 @@ import Styled from './styles'
 export default function HomePage() {
   return (
     <Styled.Layout>
-      <TopBar />
-      <TaskForm />
+      <div className={'top-section'}>
+        <TopBar />
+        <TaskForm />
+      </div>
       <ToDoTaskList />
     </Styled.Layout>
   )

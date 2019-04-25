@@ -11,7 +11,7 @@ import Styled from './styles'
 
 export default function TaskStep({ step, onSwitch, onRemove }) {
   return (
-    <Styled.Container>
+    <Styled.Container marked={step.done}>
       <Button
         onClick={onSwitch}
         imgSrc={!step.done ? pendingStepIcon : doneStepIcon}

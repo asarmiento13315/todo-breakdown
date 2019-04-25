@@ -22,7 +22,8 @@ export default {
 
     &:hover {
       transform:scale(1.01);
-      background-color: #c1d96980;
+      border-radius: 8px;      
+      background-color: ${(props) => props.marked ? '#60d5fa5c' : '#bada555c'};
     }
   `,
 }

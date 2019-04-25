@@ -8,14 +8,12 @@ import taskIcon from 'images/format-list-checks.png'
 
 import Styled from './styles'
 
-export default function TaskHeader({ task, onClick, onRemove }) {
+export default function TaskHeader({ task, progress, onClick, onRemove }) {
   const handleTaskClick = () => onClick()
   const handleRemoveTask = (event) => {
     event.preventDefault()
     onRemove(task.id)
   }
-  const totalSteps = task.steps.length
-  const completedSteps = task.steps.filter((step) => step.done).length
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <Styled.Container
@@ -28,7 +26,7 @@ export default function TaskHeader({ task, onClick, onRemove }) {
         alt={'Task Header'}
         src={taskIcon}
       />
-      <div>{`${completedSteps}/${totalSteps}`}</div>
+      <div>{progress}</div>
       <div>{task.title}</div>
 
       <Button onClick={handleRemoveTask} imgSrc={deleteIcon} />
@@ -40,6 +38,7 @@ TaskHeader.propTypes = {
   task: PropTypes.shape({
     title: PropTypes.string.isRequired,
   }).isRequired,
+  progress: PropTypes.string,
   onClick:  PropTypes.func,
   onRemove: PropTypes.func,
 }
