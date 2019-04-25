@@ -7,6 +7,7 @@ export default {
     align-items: center;
 
     & .top-section {
+      z-index: 3;
       position: sticky;
       top: 0px;
       background: white;
