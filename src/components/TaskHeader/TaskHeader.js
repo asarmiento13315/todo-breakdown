@@ -9,7 +9,7 @@ import taskIcon from 'images/format-list-checks.png'
 import Styled from './styles'
 
 export default function TaskHeader({
- task, progress, onClick, onRemove 
+  task, progress, onClick, onRemove,
 }) {
   const handleTaskClick = () => onClick()
   const handleRemoveTask = (event) => {
