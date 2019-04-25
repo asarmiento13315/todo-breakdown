@@ -8,7 +8,9 @@ import taskIcon from 'images/format-list-checks.png'
 
 import Styled from './styles'
 
-export default function TaskHeader({ task, progress, onClick, onRemove }) {
+export default function TaskHeader({
+ task, progress, onClick, onRemove 
+}) {
   const handleTaskClick = () => onClick()
   const handleRemoveTask = (event) => {
     event.preventDefault()
@@ -26,7 +28,7 @@ export default function TaskHeader({ task, progress, onClick, onRemove }) {
         alt={'Task Header'}
         src={taskIcon}
       />
-      <div>{progress}</div>
+      <div style={{ marginLeft: 5 }}>{progress}</div>
       <div>{task.title}</div>
 
       <Button onClick={handleRemoveTask} imgSrc={deleteIcon} />
