@@ -2,6 +2,7 @@
 FROM node:10.15-alpine as build-deps
 WORKDIR /src
 COPY package.json package-lock.json nginx.conf ./
+COPY .env.example ./.env
 
 RUN npm install
 COPY . ./
