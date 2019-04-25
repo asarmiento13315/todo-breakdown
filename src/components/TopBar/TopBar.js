@@ -10,7 +10,7 @@ export default function TopBar() {
           <img alt={'logo'} width={'80px'} src={'https://i.imgur.com/2Dhqpzt.png'} />
         </div>
         <div>
-          <h2>To-Do Tasks Breaker</h2>
+          <h2>To-Do Break Down !</h2>
         </div>
       </Styled.Content>
     </Styled.Container>

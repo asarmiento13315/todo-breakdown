@@ -12,8 +12,14 @@ import Styled from './styles'
 export default function TaskStep({ step, onSwitch, onRemove }) {
   return (
     <Styled.Container>
-      <Button onClick={onSwitch} imgSrc={!step.done ? pendingStepIcon : doneStepIcon} />
-      <div>{step.title}</div>
+      <Button
+        onClick={onSwitch}
+        imgSrc={!step.done ? pendingStepIcon : doneStepIcon}
+        fullWidth
+        marked={step.done}
+      >
+        <div style={{ marginLeft: 10 }}>{step.title}</div>
+      </Button>
       <Button onClick={onRemove} imgSrc={deleteIcon} />
     </Styled.Container>
   )
