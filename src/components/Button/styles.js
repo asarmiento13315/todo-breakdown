@@ -26,6 +26,10 @@ export default {
     `
     : ''};
     }
+
+    & img {
+      ${(props) => props.marked ? 'filter: opacity(45%);' : ''}  
+    }
     
     &:active {
       outline:unset

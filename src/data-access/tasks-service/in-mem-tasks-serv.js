@@ -63,45 +63,45 @@ const delayedResponseWithErrors = (errors) => new Promise((resolve) => {
 
 
 const sampleTaskList = [{
-  title: 'Hacer el Cake',
+  title: 'Make the Cake',
   steps: [{
-    title: 'Batir los huevos',
+    title: 'Beat the eggs',
     done:  false,
   }, {
-    title: 'Agregar la harina',
+    title: ' Add the flour ',
     done:  false,
   }, {
-    title: 'Hornear por 30 min',
+    title: ' Bake for 30 min ',
     done:  false,
   }],
 }, {
-  title: 'Realizar trabajo de curso',
+  title: ' Do course work ',
   steps: [{
-    title: 'Reunir referencias bibliograficas',
+    title: ' Gather bibliographical references ',
     done:  false,
   }, {
-    title: 'Redactar el ensayo',
+    title: ' Write the essay ',
     done:  false,
   }, {
-    title: 'Componer la presentacion',
+    title: ' Compose the presentation ',
     done:  false,
   }, {
-    title: 'Enviar trabajo al profesor',
+    title: ' Send work to the teacher ',
     done:  false,
   }],
 }, {
-  title: 'Preparar fiesta de cumple de Pepe',
+  title: ' Prepare birthday party for Pepe ',
   steps: [{
-    title: 'Comprar lagers',
+    title: ' Buy lagers',
     done:  false,
   }, {
-    title: 'Comprar whiskies',
+    title: 'Buy whiskeys',
     done:  false,
   }, {
-    title: 'Comprar dulces',
+    title: ' Buy sweets',
     done:  false,
   }, {
-    title: 'Arreglar sala para la sorpresa',
+    title: 'Fix room for surprise',
     done:  false,
   }],
 }]
