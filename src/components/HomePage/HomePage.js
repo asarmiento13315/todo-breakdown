@@ -1,19 +1,48 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-import TaskForm from 'containers/TaskForm'
-import ToDoTaskList from 'containers/ToDoTaskList'
 import TopBar from 'components/TopBar'
+import TaskForm from 'containers/TaskForm'
+import Button from 'components/Button'
+import ToDoTaskList from 'containers/ToDoTaskList'
+
+import PresentationProvider, { PresentationContext } from 'components/contexts/PresentationContext'
+
+import collapseAllIcon from 'images/collapse-all-outline.png'
 
 import Styled from './styles'
 
-export default function HomePage() {
+function HomePage() {
+  const presentation = useContext(PresentationContext)
+
+  const collapseAll = () => presentation.collapseAllTasks()
+
   return (
     <Styled.Layout>
       <div className={'top-section'}>
         <TopBar />
-        <TaskForm />
+        <div
+          style={{
+            maxWidth:   '640px',
+            display:    'flex',
+            alignItems: 'center',
+            margin:     'auto',
+          }}
+        >
+          <TaskForm />
+          <div className={'card-actions'}>
+            <Button onClick={collapseAll} imgSrc={collapseAllIcon} />
+          </div>
+        </div>
       </div>
       <ToDoTaskList />
     </Styled.Layout>
+  )
+}
+
+export default function PresentedHomePage() {
+  return (
+    <PresentationProvider>
+      <HomePage />
+    </PresentationProvider>
   )
 }

@@ -17,8 +17,8 @@ function TaskForm({ addTask, restoreSampleTasks }) {
     }
   }
   return (
-    <div style={{ width: '100%', display: 'inline-flex', justifyContent: 'center' }}>
-      <form style={{ width: '600px' }} onSubmit={handleNewTask}>
+    <div style={{ width: '100%', display: 'inline-flex', marginRight: '12px' }}>
+      <form style={{ width: '100%', marginRight: '12px' }} onSubmit={handleNewTask}>
         <LabeledInput placeholder={'New Task...'} {...newTask} />
       </form>
       <Button onClick={restoreSampleTasks} imgSrc={restoreIcon} />

@@ -6,6 +6,7 @@ export default {
     font-family: Avenir;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
+    width: 100%;
 
     & * {
       box-sizing: border-box;    

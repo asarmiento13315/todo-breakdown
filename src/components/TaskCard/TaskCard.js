@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import LabeledInput from 'components/LabeledInput'
@@ -6,15 +6,24 @@ import useInputForm from 'components/custom-hooks/input-form.hook'
 import TaskHeader from 'components/TaskHeader'
 import StepList from 'components/StepList'
 
+import { PresentationContext } from 'components/contexts/PresentationContext'
+
 import Styled from './styles'
 
 function TaskCard({
   task, removeTask, switchTaskStep, addTaskStep, removeTaskStep,
 }) {
-  const [expanded, setExpanded] = useState(true)
+  const presentation = useContext(PresentationContext)
   const newStep = useInputForm('')
 
-  const switchExpanded = () => setExpanded(!expanded)
+  useEffect(() => {
+    presentation.includeTask(task.id)
+    return () => presentation.forgetTask(task.id)
+  }, task.id)
+
+  const switchExpanded = () => presentation.expandTask(task.id)
+
+  const expanded = presentation.isExpanded(task.id)
 
   const handleNewTaskStep = (event) => {
     event.preventDefault()
